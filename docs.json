@@ -93,6 +93,31 @@
         ]
       },
       {
+        "tab": "For Sponsors",
+        "groups": [
+          {
+            "group": "What is sponsorship",
+            "pages": [
+              "sponsors/overview",
+              "sponsors/forms-of-sponsorship"
+            ]
+          },
+          {
+            "group": "Arrangements",
+            "pages": [
+              "sponsors/agreements",
+              "sponsors/obligations"
+            ]
+          },
+          {
+            "group": "Getting started",
+            "pages": [
+              "sponsors/becoming-a-sponsor"
+            ]
+          }
+        ]
+      },
+      {
         "tab": "For Builders",
         "groups": [
           {

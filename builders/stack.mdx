@@ -1,0 +1,35 @@
+---
+title: "The Kiduna stack"
+description: "Architectural overview for developers — identity, authority, memory, settlement, governance, and how they fit together."
+---
+
+## What this page covers
+
+- The full technical stack at a glance
+- How identity, authority, policy, and settlement travel together
+- Layer-by-layer overview with pointers to detail pages
+- Stack diagrams and reference architecture
+
+<Note>
+  These docs describe the system in development. Specific API surfaces, endpoint paths, and SDK names will be published here as they stabilize. Until then, treat this section as the architectural picture and the conceptual contract.
+</Note>
+
+## Outline
+
+### The stack at a glance
+Kiduna Codes (JWT identity / scope), FROST threshold wallets (signing), Kiduna Graph (memory), Governance markets (decision-making), Offerings (economic objects), Kiduna Protocol (settlement). Six pieces; they compose.
+
+### Identity and authority
+[Kiduna Codes](/builders/kiduna-codes) and [FROST wallets](/builders/wallets).
+
+### Memory and coordination
+[The Kiduna Graph](/builders/graph) and [governance markets](/builders/governance-markets).
+
+### Settlement
+[The Kiduna Protocol](/builders/protocol).
+
+### Integration
+[MCP servers](/builders/mcp).
+
+### Reference architecture
+Diagrams showing how components interact across a typical Member action.

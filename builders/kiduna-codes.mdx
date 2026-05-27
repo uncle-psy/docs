@@ -1,0 +1,39 @@
+---
+title: "Kiduna Codes"
+description: "Signed, encrypted JWTs that bind an Agent to identity, scope, expiry, revocation, lineage, and settlement context."
+---
+
+## What this page covers
+
+- The Code format and what each field carries
+- Signing, encryption, and key management
+- Scope and revocation semantics
+- Lineage — how Codes trace authority back to a Member and Kiduna
+- Verification — how a counterparty checks a Code
+
+## Outline
+
+### Format
+JWT structure. Header, payload, signature. What fields are required.
+
+### Identity claim
+What identifies the bearer.
+
+### Scope
+How scope is encoded. Granularity. Composition.
+
+### Expiry and revocation
+Lifetime, revocation lists, real-time checks.
+
+### Lineage
+Tracing authority from a Performer back through an Ally to a Member and Kiduna.
+
+### Settlement context
+How Codes carry information about where value can be settled.
+
+### Verification
+How a counterparty validates a Code in real time.
+
+<Warning>
+  Code format details below are placeholders. Specific schemas will be published once the implementation is stable.
+</Warning>

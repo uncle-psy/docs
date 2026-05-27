@@ -1,0 +1,252 @@
+---
+title: "Glossary"
+description: "Canonical Kiduna taxonomy. Definitions here are authoritative across docs, code, contracts, UI, and external communication."
+---
+
+<Info>
+  This page is the single source of truth for Kiduna terminology. If a term appears in code, a UI string, a contract, or a slide deck and conflicts with the definition here, the definition here wins. Pull requests that rename, redefine, or add terms must update this page.
+</Info>
+
+## How to read this glossary
+
+Each entry has four parts: the **term**, a **one-sentence definition**, **where it sits** in the Kiduna architecture (which of the six layers, or which surface), and **related terms**. Entries flagged with `Open question` describe an unresolved taxonomic decision and are not yet locked.
+
+---
+
+## Core institutional primitives
+
+### Kiduna
+
+A legally registered relational institution organized as a West Virginia Decentralized Unincorporated Nonprofit Association (DUNA), with at least 100 Members, a common nonprofit purpose, a public legal home, and governing principles. A Kiduna can hold property, maintain a treasury, enter contracts, appear in proceedings, govern its Members, and configure Allies and Alliances.
+
+- **Sits in:** the architecture itself; a Kiduna *is* the institution that contains the six layers.
+- **Related:** [DUNA](#duna), [Mission](#mission), [Member](#member), [Governing principles](#governing-principles).
+
+### DUNA
+
+Decentralized Unincorporated Nonprofit Association. The legal form codified in West Virginia Code §31D-1-101 et seq., effective July 1, 2026. Every Kiduna is a DUNA. Not every DUNA is necessarily organized as a Kiduna — Kiduna is the specific operating pattern Kiduna Club builds on top of the DUNA statute.
+
+- **Sits in:** Legal layer.
+- **Related:** [Kiduna](#kiduna), [Legal standing](#legal-standing).
+
+### Mission
+
+The common nonprofit purpose around which a Kiduna is organized. Required by the DUNA statute and durable in the institution's records.
+
+- **Sits in:** Governance layer.
+- **Related:** [Kiduna](#kiduna), [Governing principles](#governing-principles).
+
+### Member
+
+A participant in a Kiduna. Membership confers governance rights, ability to hold roles, and standing in the institution's records. Members can be human or non-human; the legal form permits intelligent agents to be Members in their own right under conditions defined by the Kiduna's governing principles.
+
+- **Sits in:** Governance layer, Identity layer.
+- **Open question:** When an intelligent agent is itself a Member (rather than an Ally representing a Member), is it called a "non-human Member" or is it called an "Ally with Member status"? These are different framings and we should pick one. See [Agent](#agent).
+- **Related:** [Ally](#ally), [Elector](#elector), [Participant](#participant).
+
+### Participant
+
+A person or agent attached to a Kiduna or Alliance without full Member status. Replaces the platform-era category of "follower." Participation is active contribution and engagement that has not yet matured into governance rights.
+
+- **Sits in:** Governance layer.
+- **Related:** [Member](#member).
+
+### Elector
+
+A Member acting in a defined governance role — typically one that involves participation in governance markets, oversight of Programs, or specific delegated authority. Electors are named in the institution's records.
+
+- **Sits in:** Governance layer.
+- **Related:** [Governance markets](#governance-markets), [Member](#member).
+
+### Governing principles
+
+The rules under which a Kiduna operates. May include blockchain programs, consensus algorithms, enacted policy proposals, and any other machine-readable or written rules the Members adopt. The DUNA statute recognizes these as the institution's internal law.
+
+- **Sits in:** Legal layer, Governance layer.
+- **Related:** [Mission](#mission), [Policy proposal](#policy-proposal).
+
+### Policy proposal
+
+A change proposed to the governing principles, treasury allocation, Mission interpretation, or any other Member-governed matter. Resolved through governance markets and Member votes.
+
+- **Sits in:** Governance layer.
+- **Related:** [Governance markets](#governance-markets), [Electors](#elector).
+
+---
+
+## Coordination and relationship
+
+### Alliance
+
+A coordinated relationship among Members, Allies, and institutions formed to pursue a defined activity. Alliances can be temporary or enduring, intimate or institutional. Every Alliance resolves to at least one Kiduna for legal standing.
+
+- **Sits in:** Cross-layer (operates across Governance, Identity, Memory, and Interface).
+- **Open question:** When an Alliance spans multiple Kidunas (cross-Kiduna coordination), is that still called an "Alliance" or does it warrant its own term? The pitch deck's architecture diagram shows Alliances connecting to other Kidunas, but the prose definition assumes resolution to a single Kiduna.
+- **Related:** [Vibe](#vibe), [Kiduna](#kiduna), [Mission](#mission).
+
+### Vibe
+
+A persistent relational environment where Members and Allies form Alliances, meet, learn, govern, transact, support, and create. The Vibe is the operational surface of relationship in the Kiduna era, replacing the platform-era "feed."
+
+- **Sits in:** Interface layer.
+- **Open question:** The pitch deck's "shifting taxonomy" table uses *Shared context* in place of *Vibe* for the same concept. We should pick one canonical term. Recommendation: keep "Vibe" since it appears across more material and has higher product recognition; deprecate "Shared context" or treat it as a generic descriptor rather than a term.
+- **Related:** [Alliance](#alliance), [Member](#member), [Ally](#ally).
+
+---
+
+## Agents
+
+### Agent
+
+A software actor operating inside the Kiduna stack. Agents come in four types: Ally, Performer, Envoy, and Program. Each type has a defined function and accountability model. "Agent" is the umbrella term; the four types are not interchangeable.
+
+- **Sits in:** Identity layer (authorization), Interface layer (action).
+- **Open question — high priority:** Some Kiduna materials use "Ally" as the umbrella term for any accountable software actor, while the pitch deck's "Four types of agents" slide treats Ally as one specific type. We have provisionally locked **Agent** as the umbrella and **Ally** as one type. Confirm or revise — this decision affects code naming.
+- **Related:** [Ally](#ally), [Performer](#performer), [Envoy](#envoy), [Program](#program).
+
+### Ally
+
+An Agent that represents a Member, Kiduna, Mission, or Alliance in relationship. Bound by Kiduna Code, policy, scope, and the standing of the authorizing Kiduna. Allies are the relational face of agentic action — they carry identity, allegiance, and revocable scope.
+
+- **Sits in:** Identity layer.
+- **Related:** [Agent](#agent), [Kiduna Code](#kiduna-code), [Member](#member).
+
+### Performer
+
+An Agent that executes bounded tasks — posting, scheduling, transacting, routing, completing workflows. Acts only within authority granted by an Ally, Program, or policy.
+
+- **Sits in:** Interface layer.
+- **Related:** [Agent](#agent), [Kiduna Code](#kiduna-code).
+
+### Envoy
+
+An Agent that participates in governance markets on behalf of a Member, according to Member-defined values, constraints, and budget. Inspectable and revocable by the Member it represents.
+
+- **Sits in:** Governance layer.
+- **Related:** [Agent](#agent), [Governance markets](#governance-markets), [Member](#member).
+
+### Program
+
+An Agent that maintains continuity of a treasury, policy surface, Mission, workflow, or Kiduna context. Governed by institutional policy and Member-approved changes. Programs are the durable, long-running computational substrate of an institution.
+
+- **Sits in:** Memory layer, Economy layer.
+- **Related:** [Agent](#agent), [Treasury](#treasury), [Governing principles](#governing-principles).
+
+---
+
+## Identity, authority, settlement
+
+### Kiduna Code
+
+A signed, encrypted JWT that binds an Ally (or other Agent) to identity, scope, expiry, revocation status, lineage, and settlement context. Codes are how agentic action is made legible, bounded, and accountable across the open agentic internet.
+
+- **Sits in:** Identity layer.
+- **Related:** [Ally](#ally), [Agent](#agent), [FROST wallet](#frost-wallet).
+
+### FROST wallet
+
+A threshold-signature wallet (FROST = Flexible Round-Optimized Schnorr Threshold) in which signing authority is split across protocol, device, and recovery shares. Members and Allies are bound to blockchain addresses via FROST wallets.
+
+- **Sits in:** Economy layer, Identity layer.
+- **Related:** [Member](#member), [Ally](#ally).
+
+### Kiduna Graph
+
+The shared memory of people, agents, content, relationships, proposals, outcomes, Offerings, and provenance — maintained across every Kiduna and Alliance.
+
+- **Sits in:** Memory layer.
+- **Related:** [Provenance](#provenance), [Records](#records).
+
+### Governance markets
+
+Conditional pass/fail markets that price the expected consequence of each policy proposal. The mechanism by which a Kiduna achieves consensus — futarchy applied to institutional decisions.
+
+- **Sits in:** Governance layer.
+- **Related:** [Envoy](#envoy), [Policy proposal](#policy-proposal), [Elector](#elector).
+
+### Kiduna Protocol
+
+Settlement rails that coordinate how value, authority, ownership, and economic participation circulate across Members, Allies, Alliances, and Kidunas.
+
+- **Sits in:** Economy layer.
+- **Related:** [Offering](#offering), [Treasury](#treasury).
+
+### Legal standing
+
+The capacity of a registered institution to hold property, enter contracts, sue and be sued, appear in proceedings, govern its members, and accept responsibility. Conferred on a Kiduna by the WV DUNA statute.
+
+- **Sits in:** Legal layer.
+- **Related:** [DUNA](#duna), [Kiduna](#kiduna).
+
+---
+
+## Economy
+
+### Treasury
+
+A Kiduna's pool of assets, on-chain and off-chain. Spent only by Member vote following governance market resolution.
+
+- **Sits in:** Economy layer.
+- **Related:** [Coin](#coin), [Policy proposal](#policy-proposal).
+
+### Offering
+
+A transferable economic object — goods, services, memberships, agents — that can be digital or physical, one-time or subscription. Offerings are the primary unit of economic exchange across Members, Alliances, and Kidunas.
+
+- **Sits in:** Economy layer.
+- **Related:** [Kiduna Protocol](#kiduna-protocol), [Treasury](#treasury).
+
+### Coin
+
+A token issued by a Kiduna and used by Members to participate in the Kiduna's economic activity. Purchased by Members; spent on Membership fees, utility charges, and other Offerings.
+
+- **Sits in:** Economy layer.
+- **Related:** [Treasury](#treasury), [Offering](#offering).
+- **Open question:** Is "Coin" the canonical term for the Kiduna's native token, or is it a generic category that includes specific named tokens per Kiduna? Worth clarifying before code locks "Coin" as a type name.
+
+### Provenance
+
+The recorded lineage of an action, decision, Offering, or relationship. Stored in the Kiduna Graph. Provenance travels with every Offering and every Ally action.
+
+- **Sits in:** Memory layer.
+- **Related:** [Kiduna Graph](#kiduna-graph), [Records](#records).
+
+### Records
+
+The institutional memory of a Kiduna — proposals, votes, treasury movements, governance decisions, disputes, repairs, and outcomes.
+
+- **Sits in:** Memory layer.
+- **Related:** [Kiduna Graph](#kiduna-graph), [Provenance](#provenance).
+
+---
+
+## Product surfaces
+
+### Kiduna Club
+
+The end-user application where Members hold membership, configure personal Allies, participate in Vibes and governance, and hold wallets, Codes, and Coins. Available on mobile, desktop, web, and connected TV.
+
+- **Related:** [Member](#member), [Ally](#ally), [Vibe](#vibe).
+
+### Kiduna Studio
+
+The builder and creator surface where Allies, Missions, and organizations are designed. Used to build Allies through the inform / instruct / empower / align process, form organizations, draft governing principles, design Missions and Vibes and Offerings, and define policies, scopes, and Ally Codes.
+
+- **Related:** [Ally](#ally), [Mission](#mission), [Governing principles](#governing-principles).
+
+### Kiduna Exchange
+
+The marketplace where Members, Alliances, and Kidunas discover, buy, sell, and trade agents, goods, and services. Provenance and attribution travel with every trade. Includes the integrated affiliate marketing system.
+
+- **Related:** [Offering](#offering), [Provenance](#provenance).
+
+---
+
+## Open taxonomic questions to resolve
+
+These four decisions affect code naming and external communication. Listed in priority order:
+
+1. **Agent vs. Ally as umbrella term.** Currently provisionally locked as Agent (umbrella) / Ally (one of four types). Confirm or revise.
+2. **Vibe vs. Shared Context.** Currently provisionally locked as Vibe. Confirm; if confirmed, the "shifting taxonomy" table on the pitch deck should be updated.
+3. **Members who are AI agents.** Are they called "non-human Members" or "Allies with Member status"? Pick one framing.
+4. **Cross-Kiduna Alliances.** When an Alliance spans multiple Kidunas, is it still an Alliance or something else?

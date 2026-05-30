@@ -17,7 +17,7 @@
             "group": "Getting oriented",
             "pages": [
               "index",
-              "concepts/why-kidunas",
+              "concepts/the-big-unlock",
               "concepts/agentic-frontier"
             ]
           },
@@ -214,5 +214,12 @@
   },
   "footer": {
     "socials": {}
-  }
+  },
+  "redirects": [
+    {
+      "source": "/concepts/why-kidunas",
+      "destination": "/concepts/the-big-unlock",
+      "permanent": true
+    }
+  ]
 }
